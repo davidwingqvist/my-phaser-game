@@ -20,10 +20,7 @@ const config: Types.Core.GameConfig = {
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
     physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: {x: 0, y: 200}
-        }
+        default: 'arcade'
     },
     scene: [
         Boot,
