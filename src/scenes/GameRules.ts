@@ -29,7 +29,7 @@ export class GameRules extends Scene
             align: 'center'
         }).setOrigin(0.5);
 
-        this.rulesText = this.add.text(512, 600, 'Press SPACE to Jump over obstacles!\nTo start the game, Press ENTER', {
+        this.rulesText = this.add.text(512, 600, 'Press SPACE to charge your jump then release to jump over obstacles!\nTo start the game, Press ENTER', {
             fontFamily: 'Arial Black', fontSize: 12, color: '#ffffff',
             stroke: '#000000', strokeThickness: 8,
             align: 'center'
