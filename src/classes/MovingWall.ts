@@ -1,6 +1,6 @@
 import 'phaser';
 
-const MAX_SPEED = -300;
+const MAX_SPEED = -200;
 
 export class MovingWall extends Phaser.Physics.Arcade.Sprite
 {
@@ -9,10 +9,10 @@ export class MovingWall extends Phaser.Physics.Arcade.Sprite
 
     constructor(scene: Phaser.Scene, x: number, y: number)
     {
-        super(scene, x, y, 'ground');
+        super(scene, x, y, 'wall');
         this.currentVelocity = -200;
 
-        this.sprite = scene.physics.add.sprite(x, y, 'ground');
+        this.sprite = scene.physics.add.sprite(x, y, 'wall').setScale(4, 4);
         this.sprite.setVelocityX(this.currentVelocity);
     }
 
@@ -24,7 +24,7 @@ export class MovingWall extends Phaser.Physics.Arcade.Sprite
             if(this.currentVelocity > MAX_SPEED)
                 this.currentVelocity -= 50;
 
-            this.sprite.setScale(1, (Math.random() * 1.25) + 1);
+            this.sprite.setScale(4, (Math.random() * 8) + 4);
             
             this.sprite.setVelocityX((Math.random() * MAX_SPEED) - 200);
 

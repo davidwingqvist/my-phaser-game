@@ -15,6 +15,8 @@ export class Boot extends Scene
         this.load.image('background', 'assets/bg.png');
         this.load.image('ground', 'assets/player.png');
         this.load.image('bob', 'assets/bob.png');
+        this.load.image('wall', 'assets/wall.png');
+        this.load.image('cloud', 'assets/cloud.png');
     }
 
     create ()

@@ -59,7 +59,9 @@ export class Game extends Scene
             align: 'center'
         });
 
-        this.movingWalls = new MovingWall(this, 1024, 630);
+        this.add.sprite(1000, 500, 'cloud').setScale(3, 3).setDepth(1);
+
+        this.movingWalls = new MovingWall(this, 1024, 600);
 
         // if player touches ground, allow jumping again.
         this.physics.add.collider(this.ground, this.player, () => {
@@ -100,7 +102,7 @@ export class Game extends Scene
                 if(this.jumpGraph < -PI_DIV2)
                     this.jumpGraph = PI_DIV2;
 
-                this.playerJumpPower = Math.cos(this.jumpGraph);
+                this.playerJumpPower = Math.abs(Math.cos(this.jumpGraph));
 
                 this.playerCanJump = false;
                 this.jumpPowerUI.setScale(1, this.playerJumpPower);
